@@ -1,4 +1,4 @@
-from digital_Life.interface.i_sample import ISample
+from digital_life.interface.i_sample import ISample
 
 
 class Sample(ISample):

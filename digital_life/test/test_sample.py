@@ -3,7 +3,7 @@ from unittest import TestCase
 from hypothesis import given
 from hypothesis.strategies import integers
 
-from digital_Life.src.sample import Sample
+from digital_life.src.sample import Sample
 
 
 class TestPythonDiceInterpreter(TestCase):
