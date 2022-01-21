@@ -88,7 +88,7 @@ class TestEntity(TestCase):
         identifier = entity.identifier
         location = entity.location
         # Act
-        del entity
+        entity.delete()
 
         # Assert
         self.assertEqual(location, mock_location)

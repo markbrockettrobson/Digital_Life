@@ -22,6 +22,10 @@ class IEntity(ABC):
         raise NotImplementedError
 
     @abstractmethod
+    def delete(self):
+        pass
+
+    @abstractmethod
     def add_on_update_location_action(self, action: Callable[["IEntity", Location], None]):
         pass
 
