@@ -11,8 +11,8 @@ class Entity(IEntity):
             identifier = uuid4()
         self._identifier = identifier
         self._location = location
-        self._on_update_location_actions: List[Callable[["IEntity", Location], None]] = []
-        self._pre_del_actions: List[Callable[["IEntity"], None]] = []
+        self._on_update_location_actions: List[Callable[[IEntity, Location], None]] = []
+        self._pre_del_actions: List[Callable[[IEntity], None]] = []
 
     @property
     def identifier(self) -> UUID:
@@ -28,13 +28,13 @@ class Entity(IEntity):
             action(self, value)
         self._location = value
 
-    def add_on_update_location_action(self, action: Callable[["IEntity", Location], None]):
+    def add_on_update_location_action(self, action: Callable[[IEntity, Location], None]):
         self._on_update_location_actions.append(action)
 
-    def add_pre_del_action(self, action: Callable[["IEntity"], None]):
+    def add_pre_del_action(self, action: Callable[[IEntity], None]):
         self._pre_del_actions.append(action)
 
-    def __del__(self):
+    def delete(self):
         for action in self._pre_del_actions:
             action(self)
         del self

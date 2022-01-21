@@ -12,7 +12,3 @@ RUN python -m pip install --no-cache-dir -r requirements_test.txt
 
 COPY pyproject.toml ./
 COPY digital_life ./digital_life
-
-RUN python -m pytest --black --isort --pylint --mypy --cov .
-
-#docker build -t 310_pytest -f continuous_integration/310_pytest.dockerfile .
