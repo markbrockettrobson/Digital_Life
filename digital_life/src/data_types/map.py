@@ -3,11 +3,11 @@ from typing import Dict, Set
 from rtree import Rtree  # type: ignore
 
 from digital_life.interface.data_types.i_entity import IEntity
-from digital_life.interface.data_types.i_world import IWorld
+from digital_life.interface.data_types.i_map import IMap
 from digital_life.src.data_types.location import Location
 
 
-class World(IWorld):
+class Map(IMap):
     def __init__(self, height: float, width: float):
         self._width = width
         self._height = height

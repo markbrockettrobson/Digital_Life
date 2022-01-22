@@ -5,7 +5,7 @@ from digital_life.interface.data_types.i_entity import IEntity
 from digital_life.src.data_types.location import Location
 
 
-class IWorld(ABC):
+class IMap(ABC):
     @property
     @abstractmethod
     def height(self) -> float:
